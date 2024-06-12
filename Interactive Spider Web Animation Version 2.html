@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Animation</title>
+    <style>
+        /* Ensuring the body and html have no margin or padding, full width and height, and hidden overflow */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000; /* Background color set to black */
+            overflow: hidden; /* Prevents scroll bars from appearing */
+        }
+        /* The canvas where the particles will be drawn */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        /* Initializing the particles.js with specific configurations */
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80, // Number of particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800 // Density area for particles
+                    }
+                },
+                "color": {
+                    "value": "#ffffff" // Particle color
+                },
+                "shape": {
+                    "type": "circle", // Shape type
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000" // Stroke color and width
+                    },
+                    "polygon": {
+                        "nb_sides": 5 // Number of sides for polygon shapes
+                    }
+                },
+                "opacity": {
+                    "value": 0.5, // Opacity of particles
+                    "random": false,
+                    "anim": {
+                        "enable": false, // Disable opacity animation
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3, // Size of particles
+                    "random": true, // Randomize particle size
+                    "anim": {
+                        "enable": false, // Disable size animation
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true, // Enable lines between particles
+                    "distance": 150, // Maximum distance for linked lines
+                    "color": "#ffffff", // Line color
+                    "opacity": 0.4, // Line opacity
+                    "width": 1 // Line width
+                },
+                "move": {
+                    "enable": true, // Enable particle movement
+                    "speed": 6, // Speed of particle movement
+                    "direction": "none", // Direction of movement
+                    "random": false, // Randomize movement
+                    "straight": false, // Movement is not straight
+                    "out_mode": "out", // Particles move out of canvas
+                    "bounce": false, // Disable bounce effect
+                    "attract": {
+                        "enable": true, // Enable attraction effect
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true, // Enable interaction on hover
+                        "mode": "grab" // Grab particles on hover
+                    },
+                    "onclick": {
+                        "enable": true, // Enable interaction on click
+                        "mode": "push" // Push particles on click
+                    },
+                    "resize": true // Adjust particles on window resize
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200, // Distance for grab effect
+                        "line_linked": {
+                            "opacity": 1 // Opacity for grabbed lines
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40, // Size for bubble effect
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200, // Distance for repulse effect
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4 // Number of particles to push
+                    },
+                    "remove": {
+                        "particles_nb": 2 // Number of particles to remove
+                    }
+                }
+            },
+            "retina_detect": true // Enable retina display support
+        });
+    </script>
+</body>
+</html>
